@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<VPS type="SUPPLEMENTARY" version="1.0" date="01.08.2008" masterVersion="0.2" comment="Initial supplementary configuration file for VPS">
+
+  <!-- Camera model input -->
+
+  <INPUT_CAMERA_MODEL>
+    <!-- Choose between different camera model types. -->
+    <!-- CAMERA_MODEL_SCARAMUZZA -->
+    <!-- CAMERA_MODEL_SPHERICAL_UNROLLED -->
+    <Type type="string" default="CAMERA_MODEL_SCARAMUZZA">
+      CAMERA_MODEL_SCARAMUZZA
+    </Type>
+  </INPUT_CAMERA_MODEL>
+
+  <!-- Camera model output -->
+
+  <OUTPUT_CAMERA_MODEL>
+    <!-- Choose between different camera model types. Currently only Scaramuzza is supported. -->
+    <!-- CAMERA_MODEL_SCARAMUZZA -->
+    <!-- CAMERA_MODEL_SPHERICAL_UNROLLED -->
+    <Type type="string" default="CAMERA_MODEL_SPHERICAL_UNROLLED">
+      CAMERA_MODEL_SPHERICAL_UNROLLED
+    </Type>
+  </OUTPUT_CAMERA_MODEL>
+
+  <!-- Specific camera model configuration for Scaramuzza -->
+
+  <CAMERA_MODEL_SCARAMUZZA>
+    <!-- TODO : adapt to simple scaramuzza camera model without rectification etc -->
+    <!-- Parameter vector storing all relevant calibration data for project/unproject and rectification. -->
+    <!--  1 : Image width -->
+    <!--  2 : Image height -->
+    <!-- .. : .. -->
+    <!-- 17 : Rectification method -->
+    <!--    : 0 = NONE -->
+    <!--    : 1 = CYLINDRICAL -->
+    <!--    : 2 = CONE -->
+    <!--    : 3 = SPHERICAL -->
+    <Parameters type="vector64" size="20">
+      1024 768 530.9825922 379.2064971 183 412 -190.0841993 0 0.0004198031484 6.165753533e-006 -6.818607448e-009 -1.000116662 5.130130454e-006 -3.543400502e-005 -1 25 3 0 0 0
+    </Parameters>
+  </CAMERA_MODEL_SCARAMUZZA>
+
+  <!-- Specific camera model configuration for Spherical Unrolled -->
+
+  <CAMERA_MODEL_SPHERICAL_UNROLLED>
+    <!-- TODO : adapt to real spherical camera model -->
+    <!-- Parameter vector storing all relevant calibration data for project/unproject and rectification. -->
+    <!--  1 : Image width -->
+    <!--  2 : Image height -->
+    <!-- .. : .. -->
+    <!-- 17 : Rectification method -->
+    <!--    : 0 = NONE -->
+    <!--    : 1 = CYLINDRICAL -->
+    <!--    : 2 = CONE -->
+    <!--    : 3 = SPHERICAL -->
+    <Parameters type="vector64" size="20">
+      1024 768 530.9825922 379.2064971 183 412 -190.0841993 0 0.0004198031484 6.165753533e-006 -6.818607448e-009 -1.000116662 5.130130454e-006 -3.543400502e-005 -1 25 3 0 0 0
+    </Parameters>
+  </CAMERA_MODEL_SPHERICAL_UNROLLED>
+
+  <!-- Feature decomposition configuration, TODO: add validation of choosen combination -->
+
+  <FEATURE_DECOMPOSITION>
+    <!-- Choose between different kind of feature decompositions. -->
+    <!-- FEATURE_SIFT_CVA -->
+    <!-- FEATURE_SIFT_GPU -->
+    <!-- FEATURE_SURF_CVA -->
+    <!-- FEATURE_IFD_CALONDER -->
+    <!-- FEATURE_IFDHW_CALONDER -->
+    <!-- FEATURE_OPEN_CV -->
+    <Type type="string" default="FEATURE_SIFT_GPU">
+      FEATURE_SIFT_GPU
+    </Type>
+
+  </FEATURE_DECOMPOSITION>
+
+</VPS>
