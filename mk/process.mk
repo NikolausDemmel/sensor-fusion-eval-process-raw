@@ -17,4 +17,4 @@ imu.bag: recorded.bag
 plot-imu: angvel.pdf linacc.pdf
 
 angvel.% linacc.%: imu.bag 
-	rosrun uvm_handheld_evaluation rosbag_plot_imu.py imu.bag -v -t /xsens_imu/imu/data
+	rosrun uvm_handheld_evaluation rosbag_plot_imu.py imu.bag -v -t /xsens_imu/imu/data -s 9
